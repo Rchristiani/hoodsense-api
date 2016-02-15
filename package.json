@@ -1,0 +1,20 @@
+{
+  "name": "hoodsense-api",
+  "version": "1.0.0",
+  "description": "API for Hoodsense application",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "mongod",
+    "start": "node server.js",
+    "poststop": "mongo admin --eval 'db.shutdownServer()' > /dev/null"
+  },
+  "author": "Drew Minns",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.4.3",
+    "morgan": "^1.6.1"
+  }
+}
