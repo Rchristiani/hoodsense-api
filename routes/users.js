@@ -10,5 +10,4 @@ users.all = (req, res) => {
 	});
 };
 
-
 module.exports = users;
