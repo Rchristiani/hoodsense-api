@@ -1,6 +1,6 @@
 'use strict';
 
-const UserModel = require('./models/user');
+const UserModel = require('../models/user');
 const users = {};
 
 /*----------  api/users - GET  ----------*/

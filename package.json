@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "mongod",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "poststop": "mongo admin --eval 'db.shutdownServer()' > /dev/null"
   },
   "author": "Drew Minns",

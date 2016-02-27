@@ -1,6 +1,6 @@
 'use strict';
 
-const Model = require('./models/user');
+const UserModel = require('../models/user');
 const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
@@ -11,10 +11,12 @@ app.set('superSecret', config.secret);
 const auth = {};
 
 auth.secure = (req, res) => {
-	Model.findOne({
+	UserModel.findOne({
 		username: req.body.username
 	}, (err, user) => {
-		if (err) throw err;
+
+		if (err)
+			throw err;
 		// Check if username exists
 		if (!user) {
 			res.json({success: false, message: 'Username not found'});
@@ -35,7 +37,6 @@ auth.secure = (req, res) => {
 					message: 'User Authenticated!',
 					token: token
 				});
-
 			};
 		};
 	});

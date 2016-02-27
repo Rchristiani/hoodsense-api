@@ -1,6 +1,6 @@
 'use strict';
 
-const UnitModel = require('./models/unit'); 
+const UnitModel = require('../models/unit'); 
 const units = {};
 
 // View all units

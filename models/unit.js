@@ -6,5 +6,5 @@ module.exports = Mongoose.model('Unit', new Schema({
 	title: String,
 	city: { type: String, lowercase: true },
 	country: { type: String, lowercase: true },
-	title: String
+	description: String
 }))
