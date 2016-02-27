@@ -56,7 +56,6 @@ auth.login = (req, res) => {
 		} else if (user) {
 			
 			// Check if password is correct
-			// if (user.password != req.body.password) {
 			if (!isValidPassword(user, req.body.password)) {
 				res.json({success: false, message: 'Incorrect Password!'});
 			} else {
