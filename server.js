@@ -2,15 +2,13 @@
 
 const express = require('express');
 const app = express();
-const router = express.Router();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-
 const h = require('./helpers');
 const config = require('./config');
-
 let port = process.env.port || 3200;
+
 mongoose.connect(config.database);
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -18,9 +16,6 @@ app.use(bodyParser.json());
 app.set('superSecret', config.secret);
 app.use(morgan('dev'));
 
-/*================================================================
-=            JSON Web Token Authentication Middleware            =
-================================================================*/
 const Auth = require('./routes/auth');
 const User = require('./routes/users');
 const Units = require('./routes/units');
